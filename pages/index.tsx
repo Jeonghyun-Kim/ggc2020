@@ -108,10 +108,10 @@ const Root = styled.div`
         margin: 0 auto;
       }
       .list-container {
-        padding: 0 10px;
+        padding: 0 ${PADDING.mobile}px;
         display: grid;
         grid-gap: ${GAP.mobile}px;
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
       }
     }
   }
@@ -178,6 +178,16 @@ const Root = styled.div`
             width: 50px;
             height: auto;
           }
+        }
+      }
+    }
+    .gallery {
+      .division {
+        .list-container {
+          padding: 0 ${PADDING.desktop}px;
+          display: grid;
+          grid-gap: ${GAP.desktop}px;
+          grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
         }
       }
     }
