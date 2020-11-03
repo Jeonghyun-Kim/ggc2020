@@ -117,7 +117,7 @@ const Root = styled.div`
     background-color: #dbdbdb;
     padding: 48px 16px 0 16px;
     & > * {
-      max-width: 800px;
+      max-width: 1100px;
       margin: 0 auto;
     }
     .title {
