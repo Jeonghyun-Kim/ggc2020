@@ -102,11 +102,9 @@ const Root = styled.div`
       color: #21535f;
     }
     .division {
-      .award-group {
-        width: 100%;
-        max-width: 1100px;
-        margin: 0 auto;
-      }
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
       .list-container {
         padding: 0 ${PADDING.mobile}px;
         display: grid;
