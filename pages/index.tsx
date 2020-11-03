@@ -9,7 +9,7 @@ const Root = styled.div`
 const IndexPage: React.FC = () => {
   return (
     <Root>
-      <></>
+      <h2>PREVIEW</h2>
     </Root>
   );
 };
