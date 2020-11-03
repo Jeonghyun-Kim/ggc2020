@@ -32,7 +32,7 @@ const Root = styled.div`
   }
 `;
 
-const PreparingPage: React.FC = () => {
+const Preparing: React.FC = () => {
   return (
     <Root>
       <div className="preparing">
@@ -45,7 +45,7 @@ const PreparingPage: React.FC = () => {
         <Image
           id="preparing-text"
           src="/images/preparing-text.png"
-          alt="전시 준비 중 전시기간 2020.11.06 ~ 11.16"
+          alt="전시 준비 중 전시기간 2020.11.06 ~ 11.13"
           width={702}
           height={702}
         />
@@ -54,4 +54,4 @@ const PreparingPage: React.FC = () => {
   );
 };
 
-export default PreparingPage;
+export default Preparing;

@@ -1,16 +1,17 @@
 import React from 'react';
-import { useRouter } from 'next/router';
+import styled from 'styled-components';
 
-import Loading from '../components/Loading';
+const Root = styled.div`
+  width: 100%;
+  height: 100%;
+`;
 
 const IndexPage: React.FC = () => {
-  const router = useRouter();
-
-  React.useEffect(() => {
-    router.replace('/prepair');
-  }, [router]);
-
-  return <Loading />;
+  return (
+    <Root>
+      <></>
+    </Root>
+  );
 };
 
 export default IndexPage;

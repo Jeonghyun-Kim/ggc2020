@@ -7,7 +7,7 @@ const NotFoundPage: React.FC = () => {
   const router = useRouter();
 
   React.useEffect(() => {
-    router.replace('/prepair');
+    router.replace('/');
   }, [router]);
 
   return <Loading />;

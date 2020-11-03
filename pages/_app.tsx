@@ -12,6 +12,7 @@ import {
 } from 'react-device-detect';
 
 import { GlobalCSS } from '../components/GlobalStyle';
+import Prepairing from '../components/Prepairing';
 
 import { getIndex, saveIndex } from '../utils/artwork';
 import { initGA, logPageView } from '../lib/analytics';
@@ -111,13 +112,17 @@ const App: React.FC<{
           rel="stylesheet"
         />
       </Head>
-      <AppContext.Provider
-        value={{
-          index,
-          setIndex: saveAndSetIndex,
-        }}>
-        <Component {...pageProps} />
-      </AppContext.Provider>
+      {process.env.NEXT_PUBLIC_IS_PRODUCTION === 'production' ? (
+        <Prepairing />
+      ) : (
+        <AppContext.Provider
+          value={{
+            index,
+            setIndex: saveAndSetIndex,
+          }}>
+          <Component {...pageProps} />
+        </AppContext.Provider>
+      )}
     </>
   );
 };
