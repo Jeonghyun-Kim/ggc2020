@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "division": "일반부",
+    "division": "adult",
     "award": "최우수",
     "name": "이윤정",
     "title": "별빛 내린 밤의 강감찬",
@@ -11,7 +11,7 @@
   },
   {
     "id": 2,
-    "division": "일반부",
+    "division": "adult",
     "award": "우수",
     "name": "이연주",
     "title": "강감찬 장군",
@@ -21,7 +21,7 @@
   },
   {
     "id": 3,
-    "division": "일반부",
+    "division": "adult",
     "award": "장려",
     "name": "강원준",
     "title": "코스크는 안돼요!",
@@ -31,7 +31,7 @@
   },
   {
     "id": 4,
-    "division": "일반부",
+    "division": "adult",
     "award": "장려",
     "name": "김수영",
     "title": "관악구는 우리가 지킨다!!",
@@ -41,7 +41,7 @@
   },
   {
     "id": 5,
-    "division": "중등부",
+    "division": "middle",
     "award": "최우수",
     "name": "정세민",
     "title": "코로나19 OUT LET'S WIN",
@@ -51,7 +51,7 @@
   },
   {
     "id": 6,
-    "division": "중등부",
+    "division": "middle",
     "award": "우수",
     "name": "이재겸",
     "title": "강감찬장군 동상 앞에서",
@@ -61,7 +61,7 @@
   },
   {
     "id": 7,
-    "division": "중등부",
+    "division": "middle",
     "award": "우수",
     "name": "정성현",
     "title": "코로나 박멸",
@@ -71,7 +71,7 @@
   },
   {
     "id": 8,
-    "division": "중등부",
+    "division": "middle",
     "award": "장려",
     "name": "강은교",
     "title": "마스크 쓰고 코로나를 물리친 강감찬",
@@ -81,7 +81,7 @@
   },
   {
     "id": 9,
-    "division": "중등부",
+    "division": "middle",
     "award": "장려",
     "name": "김윤슬",
     "title": "우리의 무기는 마스크와 손소독제",
@@ -91,7 +91,7 @@
   },
   {
     "id": 10,
-    "division": "중등부",
+    "division": "middle",
     "award": "장려",
     "name": "임미진",
     "title": "보이지 않는 영웅",
@@ -101,7 +101,7 @@
   },
   {
     "id": 11,
-    "division": "초등부",
+    "division": "elementary",
     "award": "최우수",
     "name": "김다인",
     "title": "관악구는 처음이지?",
@@ -111,7 +111,7 @@
   },
   {
     "id": 12,
-    "division": "초등부",
+    "division": "elementary",
     "award": "우수",
     "name": "김은채",
     "title": "코로나 때문에",
@@ -121,7 +121,7 @@
   },
   {
     "id": 13,
-    "division": "초등부",
+    "division": "elementary",
     "award": "우수",
     "name": "김상아",
     "title": "강감찬 VS 코로나19",
@@ -131,7 +131,7 @@
   },
   {
     "id": 14,
-    "division": "초등부",
+    "division": "elementary",
     "award": "우수",
     "name": "김하율",
     "title": "특명 관악구를 살려라~~",
@@ -141,7 +141,7 @@
   },
   {
     "id": 15,
-    "division": "초등부",
+    "division": "elementary",
     "award": "우수",
     "name": "송경민",
     "title": "코로나와의 전쟁",
@@ -151,7 +151,7 @@
   },
   {
     "id": 16,
-    "division": "초등부",
+    "division": "elementary",
     "award": "우수",
     "name": "이소윤",
     "title": "관악산엔 강감찬장군이 있고 코리아엔 용감한 국민이 있다",
@@ -161,7 +161,7 @@
   },
   {
     "id": 17,
-    "division": "초등부",
+    "division": "elementary",
     "award": "우수",
     "name": "정재빈",
     "title": "강감찬장군도 지키는 슬기로운 코로나19 생활",
@@ -171,7 +171,7 @@
   },
   {
     "id": 18,
-    "division": "초등부",
+    "division": "elementary",
     "award": "우수",
     "name": "최예헌",
     "title": "행복한 관악산",
@@ -181,7 +181,7 @@
   },
   {
     "id": 19,
-    "division": "초등부",
+    "division": "elementary",
     "award": "장려",
     "name": "박하원",
     "title": "원펀치 코로나",
@@ -191,7 +191,7 @@
   },
   {
     "id": 20,
-    "division": "초등부",
+    "division": "elementary",
     "award": "장려",
     "name": "신우현",
     "title": "코로나",
@@ -201,7 +201,7 @@
   },
   {
     "id": 21,
-    "division": "초등부",
+    "division": "elementary",
     "award": "장려",
     "name": "장현서",
     "title": "강감찬장군상",
@@ -211,7 +211,7 @@
   },
   {
     "id": 22,
-    "division": "초등부",
+    "division": "elementary",
     "award": "장려",
     "name": "정웅찬",
     "title": "관악산 오르는 길",
@@ -221,7 +221,7 @@
   },
   {
     "id": 23,
-    "division": "초등부",
+    "division": "elementary",
     "award": "장려",
     "name": "최예린",
     "title": "코로나의 약속",
@@ -231,7 +231,7 @@
   },
   {
     "id": 24,
-    "division": "초등부",
+    "division": "elementary",
     "award": "장려",
     "name": "최유리",
     "title": "관악산의 오리 친구",
@@ -241,7 +241,7 @@
   },
   {
     "id": 25,
-    "division": "초등부",
+    "division": "elementary",
     "award": "장려",
     "name": "최지연",
     "title": "코로나가 싫어요",

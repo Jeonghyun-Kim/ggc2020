@@ -4,15 +4,15 @@ import { useRouter } from 'next/router';
 import { createGlobalStyle } from 'styled-components';
 import {
   isMobile,
-  isIE,
   isEdge,
   isEdgeChromium,
   browserName,
   isAndroid,
 } from 'react-device-detect';
+import smoothscroll from 'smoothscroll-polyfill';
 
 import { GlobalCSS } from '../components/GlobalStyle';
-import Prepairing from '../components/Prepairing';
+import Preparing from '../components/Preparing';
 
 import { getIndex, saveIndex } from '../utils/artwork';
 import { initGA, logPageView } from '../lib/analytics';
@@ -31,6 +31,7 @@ const App: React.FC<{
   const [index, setIndex] = React.useState<number>(0);
 
   React.useEffect(() => {
+    smoothscroll.polyfill();
     initGA();
   }, []);
 
@@ -82,21 +83,6 @@ const App: React.FC<{
     );
   }
 
-  if (isIE) {
-    return (
-      <div>
-        <h2>인터넷 익스플로러에서는 전시를 감상할 수 없어요ㅜ.ㅜ</h2>
-        <h2>보다 원활한 전시 감상을 위해 크롬 브라우저 사용을 권장합니다.</h2>
-        <a
-          href="https://www.google.com/chrome/"
-          target="_blank"
-          rel="noreferrer">
-          <h4>크롬 다운받기</h4>
-        </a>
-      </div>
-    );
-  }
-
   return (
     <>
       <GlobalStyle />
@@ -113,7 +99,7 @@ const App: React.FC<{
         />
       </Head>
       {process.env.NEXT_PUBLIC_IS_PRODUCTION === 'production' ? (
-        <Prepairing />
+        <Preparing />
       ) : (
         <AppContext.Provider
           value={{
