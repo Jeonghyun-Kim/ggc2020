@@ -1,19 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
+import { useRouter } from 'next/router';
 
-const Root = styled.div`
-  width: 100%;
-  height: 100%;
-  display: grid;
-  place-items: center;
-`;
+import Loading from '../components/Loading';
 
 const IndexPage: React.FC = () => {
-  return (
-    <Root>
-      <h4>전시 준비중입니다.</h4>
-    </Root>
-  );
+  const router = useRouter();
+
+  React.useEffect(() => {
+    router.replace('/prepair');
+  }, [router]);
+
+  return <Loading />;
 };
 
 export default IndexPage;

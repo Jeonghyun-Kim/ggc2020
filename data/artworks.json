@@ -1,0 +1,227 @@
+[
+  {
+    "id": 1,
+    "division": "일반부",
+    "award": "최우수",
+    "name": "이윤정",
+    "title": "별빛 내린 밤의 강감찬",
+    "size": "",
+    "material": "디지털 드로잉(일러스트레이터)"
+  },
+  {
+    "id": 2,
+    "division": "일반부",
+    "award": "우수",
+    "name": "이연주",
+    "title": "강감찬 장군",
+    "size": "",
+    "material": "디지털 아트"
+  },
+  {
+    "id": 3,
+    "division": "일반부",
+    "award": "장려",
+    "name": "강원준",
+    "title": "코스크는 안돼요!",
+    "size": "",
+    "material": "사진에 그림 추가"
+  },
+  {
+    "id": 4,
+    "division": "일반부",
+    "award": "장려",
+    "name": "김수영",
+    "title": "관악구는 우리가 지킨다!!",
+    "size": "27 x 39",
+    "material": "8절도화지에 색연필"
+  },
+  {
+    "id": 5,
+    "division": "중등부",
+    "award": "최우수",
+    "name": "정세민",
+    "title": "코로나19 OUT LET'S WIN",
+    "size": "27 x 39",
+    "material": "종이에 수채화 물감"
+  },
+  {
+    "id": 6,
+    "division": "중등부",
+    "award": "우수",
+    "name": "이재겸",
+    "title": "강감찬장군 동상 앞에서",
+    "size": "33 x 43",
+    "material": "수채화 물감, 볼펜"
+  },
+  {
+    "id": 7,
+    "division": "중등부",
+    "award": "우수",
+    "name": "정성현",
+    "title": "코로나 박멸",
+    "size": "33 x 43",
+    "material": "4B연필, 볼펜, 수채화 물감"
+  },
+  {
+    "id": 8,
+    "division": "중등부",
+    "award": "장려",
+    "name": "강은교",
+    "title": "마스크 쓰고 코로나를 물리친 강감찬",
+    "size": "21 x 30",
+    "material": "도화지에 마커"
+  },
+  {
+    "id": 9,
+    "division": "중등부",
+    "award": "장려",
+    "name": "김윤슬",
+    "title": "우리의 무기는 마스크와 손소독제",
+    "size": "39 x 27",
+    "material": "도화지에 수채화 물감"
+  },
+  {
+    "id": 10,
+    "division": "중등부",
+    "award": "장려",
+    "name": "임미진",
+    "title": "보이지 않는 영웅",
+    "size": "",
+    "material": "타블렛에 디지털 그림"
+  },
+  {
+    "id": 11,
+    "division": "초등부",
+    "award": "최우수",
+    "name": "김다인",
+    "title": "관악구는 처음이지?",
+    "size": "26.5 x 38",
+    "material": "수채화 물감, 볼펜, 색연필"
+  },
+  {
+    "id": 12,
+    "division": "초등부",
+    "award": "우수",
+    "name": "김은채",
+    "title": "코로나 때문에",
+    "size": "33 x 43",
+    "material": "크레파스, 물감"
+  },
+  {
+    "id": 13,
+    "division": "초등부",
+    "award": "우수",
+    "name": "김상아",
+    "title": "강감찬 VS 코로나19",
+    "size": "",
+    "material": "디지털 아트"
+  },
+  {
+    "id": 14,
+    "division": "초등부",
+    "award": "우수",
+    "name": "김하율",
+    "title": "특명 관악구를 살려라~~",
+    "size": "25 x 35",
+    "material": "수채화 물감"
+  },
+  {
+    "id": 15,
+    "division": "초등부",
+    "award": "우수",
+    "name": "송경민",
+    "title": "코로나와의 전쟁",
+    "size": "25 x 36",
+    "material": "색연필, 수채화"
+  },
+  {
+    "id": 16,
+    "division": "초등부",
+    "award": "우수",
+    "name": "이소윤",
+    "title": "관악산엔 강감찬장군이 있고 코리아엔 용감한 국민이 있다",
+    "size": "27 x 39",
+    "material": "종이에 수채화 물감과 수채화 색연필"
+  },
+  {
+    "id": 17,
+    "division": "초등부",
+    "award": "우수",
+    "name": "정재빈",
+    "title": "강감찬장군도 지키는 슬기로운 코로나19 생활",
+    "size": "27 x 39",
+    "material": "종이에 수채화 물감과 수채화 색연필"
+  },
+  {
+    "id": 18,
+    "division": "초등부",
+    "award": "우수",
+    "name": "최예헌",
+    "title": "행복한 관악산",
+    "size": "43 x 33",
+    "material": "종이에 수채화 물감"
+  },
+  {
+    "id": 19,
+    "division": "초등부",
+    "award": "장려",
+    "name": "박하원",
+    "title": "원펀치 코로나",
+    "size": "",
+    "material": "디지털 아트"
+  },
+  {
+    "id": 20,
+    "division": "초등부",
+    "award": "장려",
+    "name": "신우현",
+    "title": "코로나",
+    "size": "26.5 x 38",
+    "material": "수채화 물감, 네임펜"
+  },
+  {
+    "id": 21,
+    "division": "초등부",
+    "award": "장려",
+    "name": "장현서",
+    "title": "강감찬장군상",
+    "size": "33 x 43",
+    "material": "수채화 물감"
+  },
+  {
+    "id": 22,
+    "division": "초등부",
+    "award": "장려",
+    "name": "정웅찬",
+    "title": "관악산 오르는 길",
+    "size": "43 x 33",
+    "material": "종이에 수채화 물감"
+  },
+  {
+    "id": 23,
+    "division": "초등부",
+    "award": "장려",
+    "name": "최예린",
+    "title": "코로나의 약속",
+    "size": "38 x 26.5",
+    "material": "수채화에 싸인펜"
+  },
+  {
+    "id": 24,
+    "division": "초등부",
+    "award": "장려",
+    "name": "최유리",
+    "title": "관악산의 오리 친구",
+    "size": "27 x 39",
+    "material": "수채화와 먹"
+  },
+  {
+    "id": 25,
+    "division": "초등부",
+    "award": "장려",
+    "name": "최지연",
+    "title": "코로나가 싫어요",
+    "size": "43 x 33",
+    "material": "종이에 물감"
+  }
+]
