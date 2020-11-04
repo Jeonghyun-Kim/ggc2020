@@ -6,12 +6,12 @@ import { useGesture } from 'react-use-gesture';
 
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-import PersonIcon from '@material-ui/icons/Person';
 import ZoomInIcon from '@material-ui/icons/ZoomIn';
 import ZoomOutIcon from '@material-ui/icons/ZoomOut';
 // import ImportContacts from '@material-ui/icons/ImportContacts';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import { ArrowLeft, ArrowRight } from '../Icons/Arrow';
+import { Award1, Award2, Award3 } from '../Icons/Award';
 import Photo from './Photo';
 import Gradient from '../Gradient';
 import Profile from './Profile';
@@ -209,6 +209,15 @@ const Slider: React.FC<props> = ({
     return () => window.removeEventListener('keydown', handler);
   }, [handleLeft, handleRight, router, profileOpen, zoomIn]);
 
+  const Award: React.FC<{ i: number }> = React.useCallback(
+    ({ i }) => {
+      if (artworks[i].award === '최우수') return <Award1 />;
+      if (artworks[i].award === '우수') return <Award2 />;
+      return <Award3 />;
+    },
+    [artworks],
+  );
+
   const CloseButton: React.FC = React.useCallback(
     () => (
       <IconButton
@@ -246,13 +255,15 @@ const Slider: React.FC<props> = ({
             }
           }}>
           <div className="icon-block">
-            <PersonIcon />
-            <span className="icon-name">작가</span>
+            <Award i={i} />
           </div>
           <div className="vertical-divider" />
           <div className="title-and-name">
             <h2 className="title">{artworks[i].title}</h2>
-            <p className="artist-name">{artworks[i].name}</p>
+            <p className="artist-name">
+              {artworks[i].prefix ? `${artworks[i].prefix} ` : ''}
+              {artworks[i].name}
+            </p>
           </div>
         </div>
         {children}

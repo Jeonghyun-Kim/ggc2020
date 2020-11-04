@@ -50,6 +50,10 @@ export const MobileRoot = styled.div`
           font-size: 1rem;
           font-weight: 500;
           color: white;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          max-width: calc(100vw - 150px);
         }
         p {
           margin: 0;
@@ -166,11 +170,15 @@ export const DesktopRoot = styled.div`
     .title-and-name {
       margin-left: 10px;
       h2 {
+        width: 300px;
         font-size: 1.5625rem;
         margin: 0;
         margin-bottom: 3px;
         font-weight: 500;
         color: white;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
       p {
         margin: 0;

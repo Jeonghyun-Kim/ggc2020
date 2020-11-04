@@ -6,8 +6,8 @@ const Award2: React.FC = ({ ...props }) => {
       id="award-2"
       data-name="Award 2"
       xmlns="http://www.w3.org/2000/svg"
-      width="100"
-      height="100"
+      width="48"
+      height="48"
       viewBox="0 0 100 100"
       {...props}>
       <defs />
