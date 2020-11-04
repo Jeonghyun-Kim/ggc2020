@@ -45,6 +45,7 @@ export const MobileRoot = styled.div`
       }
       .title-and-name {
         margin-left: 24px;
+        width: calc(100vw - 150px);
         h2 {
           margin: 5px 0;
           font-size: 1rem;
@@ -53,13 +54,31 @@ export const MobileRoot = styled.div`
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          max-width: calc(100vw - 150px);
+          width: 100%;
         }
         p {
           margin: 0;
           font-size: 0.75rem;
           font-weight: 400;
           color: white;
+        }
+        .see-more-button {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          display: flex;
+          align-items: center;
+          font-size: 0.75rem;
+          font-weight: 700;
+          color: white;
+          #arrow-down {
+            margin-left: 8px;
+            width: 16px !important;
+            height: auto !important;
+            * {
+              fill: white !important;
+            }
+          }
         }
       }
     }
