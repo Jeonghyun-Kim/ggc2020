@@ -211,16 +211,14 @@ const Root = styled.div`
         width: 60%;
         background-image: url('/images/slider_w.jpg');
         background-position: center;
-        & > div {
+        #logo-group {
+          display: block;
           position: absolute;
           right: 50px;
           bottom: 50px;
           width: min(20vw, 340px) !important;
           height: auto;
           object-fit: contain;
-        }
-        #logo-group {
-          display: block;
         }
       }
       .title-block {
@@ -336,14 +334,15 @@ const IndexPage: React.FC = () => {
     <Root className={isDesktop ? 'desktop' : ''}>
       <section className="slider">
         <div className="background">
-          <NextImage
-            id="logo-group"
-            alt="주회 관악구 주관 관악문화재단 관악미술협회 기술 온디스플레이"
-            src="/images/logo/logo-group.gif"
-            width={1000}
-            height={349}
-            priority
-          />
+          <div id="logo-group">
+            <NextImage
+              alt="주회 관악구 주관 관악문화재단 관악미술협회 기술 온디스플레이"
+              src="/images/logo/logo-group.gif"
+              width={1000}
+              height={349}
+              priority
+            />
+          </div>
         </div>
         <div className="title-block">
           <div className="top">
@@ -455,13 +454,15 @@ const IndexPage: React.FC = () => {
           <p>기간</p>
           2020.11.06 ~ 11.13
         </div>
-        <NextImage
-          id="logo-group"
-          src="/images/logo/logo-group.png"
-          alt="주최 관악구 주관 관악문화재단 관악미술협회"
-          width={542}
-          height={39}
-        />
+        <div id="logo-group-ack">
+          <NextImage
+            id="logo-group"
+            src="/images/logo/logo-group.png"
+            alt="주최 관악구 주관 관악문화재단 관악미술협회"
+            width={542}
+            height={39}
+          />
+        </div>
         <div className="divider" />
       </section>
       <Footer />
