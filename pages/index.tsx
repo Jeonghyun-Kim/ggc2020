@@ -37,6 +37,7 @@ const INFO_HEIGHT = {
 const Root = styled.div`
   width: 100%;
   height: 100%;
+  min-height: 160vw;
   section {
     overflow: hidden;
   }
@@ -96,6 +97,9 @@ const Root = styled.div`
         #arrow-down {
           width: 50px;
           height: auto;
+        }
+        @media screen and (max-height: 800px) and (orientation: landscape) {
+          display: none;
         }
       }
     }
@@ -205,6 +209,7 @@ const Root = styled.div`
     }
   }
   &.desktop {
+    min-height: 100%;
     .slider {
       .background {
         position: relative;
