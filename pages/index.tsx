@@ -195,12 +195,12 @@ const Root = styled.div`
         font-weight: 500;
       }
     }
-    #logo-group {
-      margin: 20px 0;
+    #logo-group-ack {
+      margin: 20px auto;
     }
     .divider {
       height: 1px;
-      margin-top: 48px;
+      margin-top: 24px;
       background-color: #707070;
     }
   }
