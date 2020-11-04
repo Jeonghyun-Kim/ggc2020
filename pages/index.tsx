@@ -5,11 +5,17 @@ import styled from 'styled-components';
 import IconButton from '@material-ui/core/IconButton';
 
 import { ArrowDown } from '../components/Icons/Arrow';
+import {
+  AwardGallery,
+  Adult,
+  Middle,
+  Elementary,
+} from '../components/Icons/Title';
 import ArtworkListItem from '../components/ArtworkListItem';
 import Footer from '../components/Footer';
 
 import useWindowSize from '../lib/useWindowSize';
-import { getDivisionKor } from '../utils/division';
+// import { getDivisionKor } from '../utils/division';
 
 import { artworks } from '../data';
 
@@ -94,17 +100,70 @@ const Root = styled.div`
       }
     }
   }
+  .intro {
+    max-width: 1100px;
+    margin: 0 auto;
+    .profile-block {
+      padding: 48px ${PADDING.mobile}px;
+      display: flex;
+      .image-block {
+        width: 128px;
+      }
+      .title-block {
+        padding-left: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        h2,
+        h3 {
+          margin: 0;
+        }
+        h3 {
+          font-size: 1.5625rem;
+          font-weight: 700;
+        }
+        h2 {
+          font-size: 1rem;
+          font-weight: 700;
+        }
+      }
+    }
+    .content {
+      padding: 0 ${PADDING.mobile}px;
+      margin-bottom: 48px;
+    }
+  }
   .gallery {
-    .title {
-      font-size: 2.5rem;
-      font-weight: 700;
-      text-align: center;
-      color: #21535f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 0;
+    #award-title {
+      max-width: 90%;
+      margin-bottom: 32px;
+    }
+    #adult-title,
+    #middle-title,
+    #elementary-title {
+      width: 150px;
+      padding-left: ${PADDING.mobile}px;
     }
     .division {
       width: 100%;
       max-width: 1100px;
       margin: 0 auto;
+      margin-bottom: 32px;
+      .division-title-block {
+        margin: 0 ${PADDING.mobile}px;
+        width: 100%;
+        background-color: #f7cd38;
+      }
+      .award-group {
+        .award-title {
+          margin: 8px 0;
+          padding-left: ${PADDING.mobile}px;
+        }
+      }
       .list-container {
         padding: 0 ${PADDING.mobile}px;
         display: grid;
@@ -135,9 +194,12 @@ const Root = styled.div`
         font-weight: 500;
       }
     }
+    #logo-group {
+      margin: 20px 0;
+    }
     .divider {
       height: 1px;
-      margin-top: 32px;
+      margin-top: 48px;
       background-color: #707070;
     }
   }
@@ -179,8 +241,46 @@ const Root = styled.div`
         }
       }
     }
+    .intro {
+      padding-bottom: 80px;
+      .profile-block {
+        padding: 64px ${PADDING.desktop}px;
+        .image-block {
+          width: 180px;
+        }
+        .title-block {
+          padding-left: 32px;
+        }
+        h3 {
+          font-size: 2.5rem;
+        }
+        h2 {
+          font-size: 1.25rem;
+        }
+      }
+      .content {
+        padding: 0 ${PADDING.desktop}px;
+        font-size: 1.25rem;
+      }
+    }
     .gallery {
+      #adult-title,
+      #middle-title,
+      #elementary-title {
+        padding-left: ${PADDING.desktop}px;
+      }
       .division {
+        .division-title-block {
+          margin: 0 ${PADDING.desktop}px;
+        }
+        .award-group {
+          .award-title {
+            margin: 16px 0;
+            padding-left: ${PADDING.desktop}px;
+            font-size: 2rem;
+            font-weight: 700;
+          }
+        }
         .list-container {
           padding: 0 ${PADDING.desktop}px;
           display: grid;
@@ -258,15 +358,64 @@ const IndexPage: React.FC = () => {
           </IconButton>
         </div>
       </section>
-      <section className="intro" />
+      <section className="intro">
+        <div className="profile-block">
+          <div className="image-block">
+            <Image
+              id="profile-image"
+              src="/images/KCS.jpg"
+              alt="김철성"
+              width={500}
+              height={749}
+            />
+          </div>
+          <div className="title-block">
+            <h3>안녕하십니까?</h3>
+            <h2>관악미술협회 회장 김철성입니다.</h2>
+          </div>
+        </div>
+        <div className="content">
+          <p>
+            ‘관악강감찬축제’의 하나로 강감찬 장군의 용맹한 정신과 지혜를 살려
+            ‘관악 인 히어로-당신은 영웅입니다’를 미술로 표현하는 “2020관악강감찬
+            온라인 미술공모전”에 관심을 가지고 출품해주신 여러분께 감사드립니다.
+          </p>
+          <p>
+            관악구에서 탄생한 강감찬 장군은 위기에 처한 고려를 구해낸
+            영웅입니다. 오늘날 전 세계가 코로나-19로 인해 큰 어려움에 처해
+            있으나, 대한민국은 이러한 위기를 지혜롭게 잘 극복하고 있습니다.
+            각자의 자리에서 위기를 극복하고 있는 여러분이 바로 강감찬 장군과
+            같은 영웅입니다. 이번 “2020관악강감찬 온라인 미술공모전”에 출품한
+            작품들 속에 잘 드러나 있습니다. 직접 낙성대 공원을 방문하여 강감찬
+            장군의 동상을 보며 성실하게 사생한 그림, 코로나로 인해 밖에 나가지
+            못하지만 가정에서 행복한 시간을 바라는 마음을 담은 그림, 방역수칙을
+            잘 지키며 코로나를 물리치는 모습을 창의적으로 표현한 그림, 코로나를
+            극복하기 위해 노력하는 의료진들의 모습을 감동적으로 그렸습니다.
+            심사는 주제적합성, 창의성, 완성도를 중심으로 하였습니다. 우수한
+            작품들이 많이 출품되어 제한된 작품만을 수상작으로 선정하는데 고심이
+            많았습니다.
+          </p>
+          <p>
+            수상작은 지상전과 온라인 전시로 진행됩니다. 금번 공모전이 코로나로
+            지친 마음에 위로가 되길 소망합니다. 더불어 훌륭한 미술인이 많이
+            탄생하기를 바랍니다. 우수한 작품으로 입상하신 수상자 여러분 진심으로
+            축하드립니다.
+          </p>
+        </div>
+      </section>
       <section className="gallery">
-        <h2 className="title">수상작 갤러리</h2>
-        {['adult', 'middle', 'elementary'].map((division) => (
+        {/* <h2 className="title">수상작 갤러리</h2> */}
+        <AwardGallery />
+        {['adult', 'middle', 'elementary'].map((division, idx) => (
           <div key={`division-${division}`} id={division} className="division">
-            <h3 className="division-title">{getDivisionKor(division)}</h3>
+            {/* <h3 className="division-title">{getDivisionKor(division)}</h3> */}
+            <div className="division-title-block">
+              {/* eslint-disable-next-line no-nested-ternary */}
+              {idx === 0 ? <Adult /> : idx === 1 ? <Middle /> : <Elementary />}
+            </div>
             {['최우수', '우수', '장려'].map((award) => (
               <div key={`award-${award}`} className="award-group">
-                <h4>{award}상</h4>
+                <h4 className="award-title">{award}상</h4>
                 <div className="list-container">
                   {artworks
                     .filter(
@@ -298,6 +447,13 @@ const IndexPage: React.FC = () => {
           <p>기간</p>
           2020.11.06 ~ 11.13
         </div>
+        <Image
+          id="logo-group"
+          src="/images/logo/logo-group.png"
+          alt="주최 관악구 주관 관악문화재단 관악미술협회"
+          width={542}
+          height={39}
+        />
         <div className="divider" />
       </section>
       <Footer />
