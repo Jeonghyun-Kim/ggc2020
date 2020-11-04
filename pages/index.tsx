@@ -139,14 +139,16 @@ const Root = styled.div`
     align-items: center;
     padding: 32px 0;
     #award-title {
-      max-width: 90%;
+      max-width: min(60%, 350px);
       margin-bottom: 32px;
     }
     #adult-title,
     #middle-title,
     #elementary-title {
-      width: 150px;
+      margin: 4px 0;
       padding-left: ${PADDING.mobile}px;
+      width: min(30%, 200px);
+      height: auto;
     }
     .division {
       width: 100%;
@@ -155,7 +157,6 @@ const Root = styled.div`
       margin-bottom: 32px;
       .division-title-block {
         margin: 0 ${PADDING.mobile}px;
-        width: 100%;
         background-color: #f7cd38;
       }
       .award-group {
@@ -267,6 +268,7 @@ const Root = styled.div`
       #adult-title,
       #middle-title,
       #elementary-title {
+        margin: 8px 0;
         padding-left: ${PADDING.desktop}px;
       }
       .division {
