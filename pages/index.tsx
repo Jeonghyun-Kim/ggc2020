@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import NextImage from 'next/image';
 import styled from 'styled-components';
 
 import IconButton from '@material-ui/core/IconButton';
@@ -309,6 +309,11 @@ const IndexPage: React.FC = () => {
   const { innerWidth, innerHeight } = useWindowSize();
   const isDesktop = innerWidth >= 900;
 
+  React.useEffect(() => {
+    const backgroundImg = new Image();
+    backgroundImg.src = '/images/background/original.jpg';
+  }, []);
+
   const getPhotoSize = React.useCallback(() => {
     const containerWidth = Math.min(innerWidth, 1100);
     const padding = innerWidth < 900 ? PADDING.mobile : PADDING.desktop;
@@ -331,7 +336,7 @@ const IndexPage: React.FC = () => {
     <Root className={isDesktop ? 'desktop' : ''}>
       <section className="slider">
         <div className="background">
-          <Image
+          <NextImage
             id="logo-group"
             alt="주회 관악구 주관 관악문화재단 관악미술협회 기술 온디스플레이"
             src="/images/logo/logo-group.gif"
@@ -342,12 +347,13 @@ const IndexPage: React.FC = () => {
         </div>
         <div className="title-block">
           <div className="top">
-            <Image
+            <NextImage
               id="title-image"
               alt="2020 관악강감찬 (11.06 ~ 11.13) 온라인 미술공모전"
               src="/images/title.png"
               width={680}
               height={565}
+              priority
             />
             <h2 className="title">수상작 전시</h2>
           </div>
@@ -363,7 +369,7 @@ const IndexPage: React.FC = () => {
       <section className="intro">
         <div className="profile-block">
           <div className="image-block">
-            <Image
+            <NextImage
               id="profile-image"
               src="/images/KCS.jpg"
               alt="김철성"
@@ -449,7 +455,7 @@ const IndexPage: React.FC = () => {
           <p>기간</p>
           2020.11.06 ~ 11.13
         </div>
-        <Image
+        <NextImage
           id="logo-group"
           src="/images/logo/logo-group.png"
           alt="주최 관악구 주관 관악문화재단 관악미술협회"

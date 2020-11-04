@@ -72,7 +72,7 @@ const ArtworkListItem: React.FC<props> = ({
   ...props
 }) => {
   const router = useRouter();
-  const { setIndex, index } = React.useContext(AppContext);
+  const { setIndex } = React.useContext(AppContext);
   const { innerWidth } = useWindowSize();
 
   const handleMove = React.useCallback(() => {
@@ -99,7 +99,6 @@ const ArtworkListItem: React.FC<props> = ({
         src={`/images/artworks/thumb/${artwork.id}.jpg`}
         width={size}
         height={size}
-        priority={Math.abs(artwork.id - index) < 4}
       />
       <div className="caption-block">
         <h4>{artwork.title}</h4>

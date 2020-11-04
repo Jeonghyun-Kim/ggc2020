@@ -3,7 +3,6 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { createGlobalStyle } from 'styled-components';
 import {
-  isMobile,
   isEdge,
   isEdgeChromium,
   browserName,
@@ -53,15 +52,15 @@ const App: React.FC<{
     }
   }, [router.asPath]);
 
-  React.useEffect(() => {
-    const refreshHandler = () => {
-      if (isMobile) router.reload();
-    };
-    window.addEventListener('orientationchange', refreshHandler);
+  // React.useEffect(() => {
+  //   const refreshHandler = () => {
+  //     if (isMobile) router.reload();
+  //   };
+  //   window.addEventListener('orientationchange', refreshHandler);
 
-    return () =>
-      window.removeEventListener('orientationchange', refreshHandler);
-  }, [router]);
+  //   return () =>
+  //     window.removeEventListener('orientationchange', refreshHandler);
+  // }, [router]);
 
   const saveAndSetIndex = React.useCallback((newIndex: number) => {
     setIndex(newIndex);
