@@ -71,7 +71,7 @@ export const MobileRoot = styled.div`
           font-size: 0.75rem;
           font-weight: 700;
           color: white;
-          #arrow-down {
+          #arrow-up {
             margin-left: 8px;
             width: 16px !important;
             height: auto !important;
@@ -112,8 +112,11 @@ export const MobileRoot = styled.div`
 `;
 
 export const DesktopRoot = styled.div`
+  position: fixed;
   width: 100%;
   height: 100%;
+  top: 0;
+  right: 0;
   .close-button {
     position: absolute;
     width: 51px;
@@ -125,8 +128,8 @@ export const DesktopRoot = styled.div`
     background-color: #515253 !important;
     transition: opacity 300ms ease;
     .MuiIconButton-label {
-      width: 51px;
-      height: 51px;
+      width: 41px !important;
+      height: 41px !important;
     }
     svg {
       font-size: 40px;
@@ -164,6 +167,17 @@ export const DesktopRoot = styled.div`
     }
     &.right {
       right: 40px;
+    }
+  }
+  #arrow-up {
+    position: absolute;
+    bottom: 160px;
+    left: 210px;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: 300ms ease;
+    &:hover {
+      bottom: 163px;
     }
   }
   .artist-info {

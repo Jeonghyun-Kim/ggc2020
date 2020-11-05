@@ -1,9 +1,11 @@
 import React from 'react';
 import NextImage from 'next/image';
+import Link from 'next/link';
 import styled from 'styled-components';
 
+import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-
+import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
 import { ArrowDown } from '../components/Icons/Arrow';
 import {
   AwardGallery,
@@ -12,6 +14,7 @@ import {
   Elementary,
 } from '../components/Icons/Title';
 import ArtworkListItem from '../components/ArtworkListItem';
+import NextSection from '../components/NextSection';
 import Footer from '../components/Footer';
 
 import useWindowSize from '../lib/useWindowSize';
@@ -98,16 +101,17 @@ const Root = styled.div`
           width: 50px;
           height: auto;
         }
-        @media screen and (max-height: 800px) and (orientation: landscape) {
+        @media screen and (max-height: 500px) and (orientation: landscape) {
           display: none;
         }
       }
     }
   }
   .intro {
-    max-width: 1100px;
-    margin: 0 auto;
+    background-color: #f8f8f8;
     .profile-block {
+      max-width: 1100px;
+      margin: 0 auto;
       padding: 48px ${PADDING.mobile}px;
       display: flex;
       .image-block {
@@ -133,6 +137,8 @@ const Root = styled.div`
       }
     }
     .content {
+      max-width: 1100px;
+      margin: 0 auto;
       padding: 0 ${PADDING.mobile}px;
       margin-bottom: 48px;
     }
@@ -144,7 +150,40 @@ const Root = styled.div`
     padding: 32px 0;
     #award-title {
       max-width: min(60%, 350px);
-      margin-bottom: 32px;
+    }
+    .gallery-info {
+      width: 100%;
+      max-width: 1100px;
+      padding: 0 ${PADDING.mobile}px;
+      margin: 16px 0 32px 0;
+      font-size: 1rem;
+      font-weight: 400;
+      display: flex;
+      flex-direction: column;
+      p {
+        margin: 0;
+      }
+      p + p {
+        margin-top: 8px;
+      }
+      .ovr-button {
+        align-self: center;
+        margin: 32px 0;
+        border-radius: 32px;
+        width: 214px;
+        height: 40px;
+        background-color: #21535f;
+        box-shadow: rgba(0, 0, 0, 0.16) 3px 3px 6px;
+        .MuiButton-label {
+          font-size: 0.875rem;
+          font-weight: 700;
+          color: white;
+          svg {
+            font-size: 1rem;
+            transform: translateY(1px);
+          }
+        }
+      }
     }
     #adult-title,
     #middle-title,
@@ -268,6 +307,29 @@ const Root = styled.div`
       }
     }
     .gallery {
+      padding: 64px 0;
+      .gallery-info {
+        padding: 0 ${PADDING.desktop}px;
+        margin: 64px 0;
+        font-size: 1.25rem;
+        font-weight: 500;
+        p + p {
+          margin-top: 8px;
+        }
+        .ovr-button {
+          margin: 64px 0 32px 0;
+          width: 340px;
+          height: 64px;
+          box-shadow: rgba(0, 0, 0, 0.16) 6px 6px 12px;
+          .MuiButton-label {
+            font-size: 1.25rem;
+            svg {
+              font-size: 1.4rem;
+              transform: translateY(1px);
+            }
+          }
+        }
+      }
       #adult-title,
       #middle-title,
       #elementary-title {
@@ -314,8 +376,10 @@ const IndexPage: React.FC = () => {
 
   React.useEffect(() => {
     const backgroundImg = new Image();
-    backgroundImg.src = '/images/background/original.jpg';
-  }, []);
+    backgroundImg.src = `/images/background/${
+      innerWidth < 900 ? 'original' : 'desktop'
+    }.jpg`;
+  }, [innerWidth]);
 
   const getPhotoSize = React.useCallback(() => {
     const containerWidth = Math.min(innerWidth, 1100);
@@ -355,8 +419,8 @@ const IndexPage: React.FC = () => {
               id="title-image"
               alt="2020 관악강감찬 (11.06 ~ 11.13) 온라인 미술공모전"
               src="/images/title.png"
-              width={680}
-              height={565}
+              width={1020}
+              height={849}
               priority
             />
             <h2 className="title">수상작 전시</h2>
@@ -366,7 +430,7 @@ const IndexPage: React.FC = () => {
             onClick={() =>
               window.scroll({ top: innerHeight, left: 0, behavior: 'smooth' })
             }>
-            <ArrowDown />
+            <ArrowDown color={innerWidth < 900 ? '#f8f8f8' : undefined} />
           </IconButton>
         </div>
       </section>
@@ -418,6 +482,17 @@ const IndexPage: React.FC = () => {
       <section className="gallery">
         {/* <h2 className="title">수상작 갤러리</h2> */}
         <AwardGallery />
+        <div className="gallery-info">
+          <p>&middot; 장려상 이상 수상작을 만나보실 수 있습니다.</p>
+          <p>
+            &middot; 썸네일을 클릭하셔도 전시장에서 작품을 감상하실 수 있습니다.
+          </p>
+          <Link href="/ovr">
+            <Button className="ovr-button" variant="contained">
+              전시장 바로가기 <ArrowForwardIos />
+            </Button>
+          </Link>
+        </div>
         {['adult', 'middle', 'elementary'].map((division, idx) => (
           <div key={`division-${division}`} id={division} className="division">
             {/* <h3 className="division-title">{getDivisionKor(division)}</h3> */}
@@ -449,6 +524,16 @@ const IndexPage: React.FC = () => {
           </div>
         ))}
       </section>
+      <NextSection>
+        <h2>수상작 전시장</h2>
+        <h4>온라인 뷰잉룸에서 작품을 더 생생하게 감상하실 수 있습니다.</h4>
+        <Link href="/ovr">
+          <a>
+            <span>전시장 바로가기</span>
+            <ArrowForwardIos />
+          </a>
+        </Link>
+      </NextSection>
       <section className="ack">
         <h2 className="title">2020 관악강감찬 온라인 미술공모전 수상작 전시</h2>
         <div className="division">
