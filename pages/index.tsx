@@ -1,9 +1,10 @@
 import React from 'react';
 import NextImage from 'next/image';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 import IconButton from '@material-ui/core/IconButton';
-
+import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
 import { ArrowDown } from '../components/Icons/Arrow';
 import {
   AwardGallery,
@@ -12,6 +13,7 @@ import {
   Elementary,
 } from '../components/Icons/Title';
 import ArtworkListItem from '../components/ArtworkListItem';
+import NextSection from '../components/NextSection';
 import Footer from '../components/Footer';
 
 import useWindowSize from '../lib/useWindowSize';
@@ -481,6 +483,16 @@ const IndexPage: React.FC = () => {
           </div>
         ))}
       </section>
+      <NextSection>
+        <h2>수상작 전시장</h2>
+        <h4>온라인 뷰잉룸에서 작품을 더 생생하게 감상하실 수 있습니다.</h4>
+        <Link href="/ovr">
+          <a>
+            <span>전시장 바로가기</span>
+            <ArrowForwardIos />
+          </a>
+        </Link>
+      </NextSection>
       <section className="ack">
         <h2 className="title">2020 관악강감찬 온라인 미술공모전 수상작 전시</h2>
         <div className="division">
