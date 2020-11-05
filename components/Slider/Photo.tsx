@@ -54,11 +54,13 @@ const Root = styled(a.div)`
   }
 `;
 
-const BackgroundImage: React.FC = () => (
+const BackgroundImage: React.FC<{ desktop?: boolean }> = ({
+  desktop = false,
+}) => (
   <img
     className="background unselectable"
     alt="white flat wall made of stone"
-    src="/images/background/desktop.jpg"
+    src={`/images/background/${!desktop ? 'original' : 'desktop'}.jpg`}
   />
 );
 
@@ -149,7 +151,7 @@ const Photo: React.FC<props> = ({
         y,
         scale,
       }}>
-      <BackgroundImage />
+      <BackgroundImage desktop={innerWidth >= 900} />
       <img
         style={{ borderRadius: round ? '50%' : '0' }}
         className="photo-img unselectable"

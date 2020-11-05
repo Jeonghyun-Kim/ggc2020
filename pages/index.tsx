@@ -100,7 +100,7 @@ const Root = styled.div`
           width: 50px;
           height: auto;
         }
-        @media screen and (max-height: 800px) and (orientation: landscape) {
+        @media screen and (max-height: 500px) and (orientation: landscape) {
           display: none;
         }
       }
@@ -342,8 +342,10 @@ const IndexPage: React.FC = () => {
 
   React.useEffect(() => {
     const backgroundImg = new Image();
-    backgroundImg.src = '/images/background/desktop.jpg';
-  }, []);
+    backgroundImg.src = `/images/background/${
+      innerWidth < 900 ? 'original' : 'desktop'
+    }.jpg`;
+  }, [innerWidth]);
 
   const getPhotoSize = React.useCallback(() => {
     const containerWidth = Math.min(innerWidth, 1100);
