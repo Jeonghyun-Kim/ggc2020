@@ -3,16 +3,15 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { createGlobalStyle } from 'styled-components';
 import {
-  isMobile,
-  isIE,
   isEdge,
   isEdgeChromium,
   browserName,
   isAndroid,
 } from 'react-device-detect';
+import smoothscroll from 'smoothscroll-polyfill';
 
 import { GlobalCSS } from '../components/GlobalStyle';
-import Prepairing from '../components/Prepairing';
+import Preparing from '../components/Preparing';
 
 import { getIndex, saveIndex } from '../utils/artwork';
 import { initGA, logPageView } from '../lib/analytics';
@@ -31,6 +30,7 @@ const App: React.FC<{
   const [index, setIndex] = React.useState<number>(0);
 
   React.useEffect(() => {
+    smoothscroll.polyfill();
     initGA();
   }, []);
 
@@ -40,7 +40,10 @@ const App: React.FC<{
   }, [setIndex]);
 
   React.useEffect(() => {
-    if (/Web/.test(browserName) && isAndroid) {
+    if (
+      isAndroid &&
+      (/Web/.test(browserName) || /Facebook/.test(browserName))
+    ) {
       window.location.href = `intent://${window.location.href.split('/')[2]}${
         router.asPath
       }#Intent;scheme=https;package=com.android.chrome;end`;
@@ -49,15 +52,15 @@ const App: React.FC<{
     }
   }, [router.asPath]);
 
-  React.useEffect(() => {
-    const refreshHandler = () => {
-      if (isMobile) router.reload();
-    };
-    window.addEventListener('orientationchange', refreshHandler);
+  // React.useEffect(() => {
+  //   const refreshHandler = () => {
+  //     if (isMobile) router.reload();
+  //   };
+  //   window.addEventListener('orientationchange', refreshHandler);
 
-    return () =>
-      window.removeEventListener('orientationchange', refreshHandler);
-  }, [router]);
+  //   return () =>
+  //     window.removeEventListener('orientationchange', refreshHandler);
+  // }, [router]);
 
   const saveAndSetIndex = React.useCallback((newIndex: number) => {
     setIndex(newIndex);
@@ -82,30 +85,15 @@ const App: React.FC<{
     );
   }
 
-  if (isIE) {
-    return (
-      <div>
-        <h2>인터넷 익스플로러에서는 전시를 감상할 수 없어요ㅜ.ㅜ</h2>
-        <h2>보다 원활한 전시 감상을 위해 크롬 브라우저 사용을 권장합니다.</h2>
-        <a
-          href="https://www.google.com/chrome/"
-          target="_blank"
-          rel="noreferrer">
-          <h4>크롬 다운받기</h4>
-        </a>
-      </div>
-    );
-  }
-
   return (
     <>
       <GlobalStyle />
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="theme-color" content="#000000" />
-        {/* <meta property="og:title" content="2020 관악 강감찬 축제" />
-        <meta property="og:description" content="관악구 온라인 사진전" />
-        <meta property="og:image" content="/images/open_graph.jpg" /> */}
+        <meta property="og:title" content="2020 관악 강감찬 축제" />
+        <meta property="og:description" content="미술 공모전 수상작 전시회" />
+        <meta property="og:image" content="/images/open_graph.jpg" />
         <title>2020 강감찬 미술 공모전 수상작 전시회</title>
         <link
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"
@@ -113,7 +101,7 @@ const App: React.FC<{
         />
       </Head>
       {process.env.NEXT_PUBLIC_IS_PRODUCTION === 'production' ? (
-        <Prepairing />
+        <Preparing />
       ) : (
         <AppContext.Provider
           value={{
