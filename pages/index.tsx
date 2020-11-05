@@ -3,6 +3,7 @@ import NextImage from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
 
+import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
 import { ArrowDown } from '../components/Icons/Arrow';
@@ -157,11 +158,31 @@ const Root = styled.div`
       margin: 16px 0 32px 0;
       font-size: 1rem;
       font-weight: 400;
+      display: flex;
+      flex-direction: column;
       p {
         margin: 0;
       }
       p + p {
         margin-top: 8px;
+      }
+      .ovr-button {
+        align-self: center;
+        margin: 32px 0;
+        border-radius: 32px;
+        width: 214px;
+        height: 40px;
+        background-color: #21535f;
+        box-shadow: rgba(0, 0, 0, 0.16) 3px 3px 6px;
+        .MuiButton-label {
+          font-size: 0.875rem;
+          font-weight: 700;
+          color: white;
+          svg {
+            font-size: 1rem;
+            transform: translateY(1px);
+          }
+        }
       }
     }
     #adult-title,
@@ -294,6 +315,19 @@ const Root = styled.div`
         font-weight: 500;
         p + p {
           margin-top: 8px;
+        }
+        .ovr-button {
+          margin: 64px 0 32px 0;
+          width: 340px;
+          height: 64px;
+          box-shadow: rgba(0, 0, 0, 0.16) 6px 6px 12px;
+          .MuiButton-label {
+            font-size: 1.25rem;
+            svg {
+              font-size: 1.4rem;
+              transform: translateY(1px);
+            }
+          }
         }
       }
       #adult-title,
@@ -451,8 +485,13 @@ const IndexPage: React.FC = () => {
         <div className="gallery-info">
           <p>&middot; 장려상 이상 수상작을 만나보실 수 있습니다.</p>
           <p>
-            &middot; 썸네일을 클릭하여 전시장에서 작품을 감상하실 수 있습니다.
+            &middot; 썸네일을 클릭하셔도 전시장에서 작품을 감상하실 수 있습니다.
           </p>
+          <Link href="/ovr">
+            <Button className="ovr-button" variant="contained">
+              전시장 바로가기 <ArrowForwardIos />
+            </Button>
+          </Link>
         </div>
         {['adult', 'middle', 'elementary'].map((division, idx) => (
           <div key={`division-${division}`} id={division} className="division">
