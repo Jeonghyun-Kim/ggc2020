@@ -58,7 +58,7 @@ const BackgroundImage: React.FC = () => (
   <img
     className="background unselectable"
     alt="white flat wall made of stone"
-    src="/images/background/original.jpg"
+    src="/images/background/desktop.jpg"
   />
 );
 

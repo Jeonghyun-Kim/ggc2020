@@ -31,11 +31,20 @@ const Root = styled(a.div)`
       font-size: 0.875rem;
       font-weight: 400;
     }
-    .award-info {
-      font-weight: 700;
+    .award-and-name {
+      display: flex;
+      margin-bottom: 20px;
+      .award-info {
+        font-size: 1rem;
+        font-weight: 700;
+      }
+      .artist-name {
+        font-size: 1rem;
+        margin-left: 40px;
+      }
     }
     .artwork-description {
-      margin: 30px 0;
+      margin: 20px 0;
     }
   }
   .profile-close-button {
@@ -68,6 +77,19 @@ const Root = styled(a.div)`
         font-size: 1rem;
         color: white;
       }
+      .award-and-name {
+        margin-bottom: 24px;
+        .award-info {
+          font-size: 1.25rem;
+        }
+        .artist-name {
+          font-size: 1.25rem;
+          margin-left: 48px;
+        }
+      }
+      .artwork-description {
+        margin: 24px 0;
+      }
     }
   }
 `;
@@ -85,10 +107,14 @@ const Profile: React.FC<props> = ({
   artwork,
   ...props
 }) => {
-  const { innerWidth } = useWindowSize();
-  const maxHeight = React.useMemo(() => (innerWidth < 900 ? 350 : 400), [
-    innerWidth,
-  ]);
+  const { innerWidth, innerHeight } = useWindowSize();
+  const maxHeight = React.useMemo(() => {
+    if (innerWidth < 900) {
+      if (innerWidth < innerHeight && innerHeight > 500) return 350;
+      return 250;
+    }
+    return 400;
+  }, [innerWidth, innerHeight]);
   const [{ height, y }, setSpring] = useSpring(
     () => ({
       height: previous ? maxHeight : 0,
@@ -117,13 +143,15 @@ const Profile: React.FC<props> = ({
           onClick={async () => close()}>
           <CloseIcon />
         </IconButton>
-        <p className="award-info">
-          {getDivisionKor(artwork.division)} {artwork.award}
-        </p>
-        <h4 className="artist-name">
-          {artwork.prefix ? `${artwork.prefix} ` : ''}
-          {artwork.name}
-        </h4>
+        <div className="award-and-name">
+          <p className="award-info">
+            {getDivisionKor(artwork.division)} {artwork.award}
+          </p>
+          <h4 className="artist-name">
+            {artwork.prefix ? `${artwork.prefix} ` : ''}
+            {artwork.name}
+          </h4>
+        </div>
         <p className="artwork-title">{artwork.title}</p>
         {artwork.size && <p className="artwork-size">{artwork.size} cm</p>}
         <p className="artwork-material">{artwork.material}</p>

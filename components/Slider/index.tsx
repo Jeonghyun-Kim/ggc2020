@@ -10,7 +10,7 @@ import ZoomInIcon from '@material-ui/icons/ZoomIn';
 import ZoomOutIcon from '@material-ui/icons/ZoomOut';
 // import ImportContacts from '@material-ui/icons/ImportContacts';
 import SvgIcon from '@material-ui/core/SvgIcon';
-import { ArrowLeft, ArrowRight, ArrowDown } from '../Icons/Arrow';
+import { ArrowLeft, ArrowRight, ArrowUp } from '../Icons/Arrow';
 import { Award1, Award2, Award3 } from '../Icons/Award';
 import Photo from './Photo';
 import Gradient from '../Gradient';
@@ -266,7 +266,7 @@ const Slider: React.FC<props> = ({
             </p>
             {innerWidth < 900 && (
               <div className="see-more-button">
-                더보기 <ArrowDown />
+                더보기 <ArrowUp />
               </div>
             )}
           </div>
@@ -419,6 +419,9 @@ const Slider: React.FC<props> = ({
           />
           <CloseButton />
           <Arrows />
+          <IconButton onClick={() => setProfileOpen(true)}>
+            <ArrowUp color="#515253" />
+          </IconButton>
           <ArtistInfo i={index.current}>
             <Profile
               open={profileOpen}
