@@ -93,7 +93,7 @@ const App: React.FC<{
         <meta name="theme-color" content="#000000" />
         <meta property="og:title" content="2020 관악 강감찬 축제" />
         <meta property="og:description" content="미술 공모전 수상작 전시회" />
-        {/* <meta property="og:image" content="/images/open_graph.jpg" /> */}
+        <meta property="og:image" content="/images/open_graph.jpg" />
         <title>2020 강감찬 미술 공모전 수상작 전시회</title>
         <link
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"
