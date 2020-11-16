@@ -32,7 +32,10 @@ const Root = styled.div`
   }
 `;
 
-const Preparing: React.FC = () => {
+interface Props {
+  end?: boolean;
+}
+const Preparing: React.FC<Props> = ({ end = false }) => {
   return (
     <Root>
       <div className="preparing">
@@ -44,8 +47,8 @@ const Preparing: React.FC = () => {
         />
         <Image
           id="preparing-text"
-          src="/images/preparing-text.png"
-          alt="전시 준비 중 전시기간 2020.11.06 ~ 11.13"
+          src={end ? '/images/ending-text.png' : '/images/preparing-text.png'}
+          alt={end ? '전시 종료' : '전시 준비 중 전시기간 2020.11.06 ~ 11.13'}
           width={702}
           height={702}
         />

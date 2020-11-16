@@ -116,8 +116,8 @@ const App: React.FC<{
           rel="stylesheet"
         />
       </Head>
-      {process.env.NEXT_PUBLIC_IS_PRODUCTION === 'production' ? (
-        <Preparing />
+      {process.env.NEXT_PUBLIC_IS_PRODUCTION !== 'production' ? (
+        <Preparing end={process.env.NEXT_PUBLIC_IS_PRODUCTION === 'end'} />
       ) : (
         <AppContext.Provider
           value={{
